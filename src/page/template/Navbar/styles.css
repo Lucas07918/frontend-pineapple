@@ -1,0 +1,30 @@
+.navbar-component {
+  background-color: #f6ca52;
+  height: 80px;
+}
+.navbar-brand {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  color: black !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-brand::before {
+  content: "";
+  height: 50px;
+  width: 50px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0560/6555/6553/files/Pineapple_Store_Instagram.png?v=1648484698");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-cadastrar {
+  margin-left: 80%;
+}

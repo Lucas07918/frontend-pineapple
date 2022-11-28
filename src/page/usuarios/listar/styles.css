@@ -1,0 +1,8 @@
+.tabela-componente {
+  background-color: white;
+}
+
+.tabela-componente th {
+  background-color: gray;
+  color: white;
+}
