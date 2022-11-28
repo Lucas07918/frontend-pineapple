@@ -43,17 +43,16 @@ const Editar = () => {
         inputs[form[i].name] = form[i].value;
       }
     }
-    //console.log(inputs);
+
     axios
       .put(`http://localhost:3333/user/${userId}`, inputs)
       .then((sucesso) => {
-        console.log("sucesso", sucesso);
+        alert(sucesso.data.message);
         navigate("/usuarios/listar");
       })
       .catch((error) => {
-        console.log("erro", error);
+        alert(`${error.response.status} - ${error.response.data.message}`);
       });
-    //console.log(form);
   }
   return (
     <div class="container margem">

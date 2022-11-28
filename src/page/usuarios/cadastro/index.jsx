@@ -21,11 +21,11 @@ const Cadastro = () => {
     axios
       .post("http://localhost:3333/user", inputs)
       .then((sucesso) => {
-        console.log("sucesso", sucesso);
+        alert(sucesso.data.message);
         navigate("/usuarios/listar");
       })
       .catch((error) => {
-        console.log("erro", error);
+        alert(`${error.response.status} - ${error.response.data.message}`);
       });
     //console.log(form);
   }
