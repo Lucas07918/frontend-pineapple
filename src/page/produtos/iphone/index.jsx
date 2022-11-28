@@ -38,14 +38,6 @@ const Iphone = () => {
                 <i class="bi-cart-fill me-1"></i>
                 Adicionar ao Carrinho
               </button>
-              <button
-                class="btn btn-outline-dark flex-shrink-0"
-                id="adicionado"
-                type="button"
-              >
-                <i class="bi-cart-fill me-1"></i>
-                Adicionado
-              </button>
             </div>
           </div>
         </div>

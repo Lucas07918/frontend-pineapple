@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 }
 
 .navbar-brand::before {
@@ -27,4 +28,8 @@
 
 .btn-cadastrar {
   margin-left: 80%;
+}
+
+.menu-link {
+  cursor: pointer;
 }

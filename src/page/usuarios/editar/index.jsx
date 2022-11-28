@@ -1,9 +1,35 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Cadastro = () => {
+const Editar = () => {
+  const { userId } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3333/user/${userId}`)
+      .then((sucesso) => {
+        console.log("sucesso", sucesso.data);
+
+        const form = document.querySelector("form");
+
+        for (let i = 0; i < form.length; i++) {
+          if (
+            form[i].type === "radio" &&
+            form[i].value == sucesso.data[0].genero
+          ) {
+            form[i].checked = true;
+          } else {
+            form[i].value = sucesso.data[0][form[i].name];
+          }
+        }
+      })
+      .catch((error) => {
+        console.log("erro", error);
+      });
+  }, []);
+
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -19,7 +45,7 @@ const Cadastro = () => {
     }
     //console.log(inputs);
     axios
-      .post("http://localhost:3333/user", inputs)
+      .put(`http://localhost:3333/user/${userId}`, inputs)
       .then((sucesso) => {
         console.log("sucesso", sucesso);
         navigate("/usuarios/listar");
@@ -31,7 +57,7 @@ const Cadastro = () => {
   }
   return (
     <div class="container margem">
-      <h1>Novo Usuario</h1>
+      <h1>Editar Usuario</h1>
       <form onSubmit={handleSubmit}>
         <div class="mb-3">
           <label>Nome</label>
@@ -117,4 +143,4 @@ const Cadastro = () => {
   );
 };
 
-export default Cadastro;
+export default Editar;

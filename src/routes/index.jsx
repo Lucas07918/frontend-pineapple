@@ -6,20 +6,20 @@ import Macbook from "../page/produtos/macbook";
 import Cadastro from "../page/usuarios/cadastro";
 import Listar from "../page/usuarios/listar";
 import React from "react";
+import Editar from "../page/usuarios/editar";
 
 const AppRoutes = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/usuarios/cadastro" element={<Cadastro />} />
-        <Route path="/usuarios/listar" element={<Listar />} />
-        <Route path="/produtos/ipad" element={<Ipad />} />
-        <Route path="/produtos/iphone" element={<Iphone />} />
-        <Route path="/produtos/macbook" element={<Macbook />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/home" element={<Home />} />
+      <Route path="/usuarios/cadastro" element={<Cadastro />} />
+      <Route path="/usuarios/listar" element={<Listar />} />
+      <Route path="/produtos/ipad" element={<Ipad />} />
+      <Route path="/produtos/iphone" element={<Iphone />} />
+      <Route path="/produtos/macbook" element={<Macbook />} />
+      <Route path="/usuarios/editar/:userId" element={<Editar />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 };
 
